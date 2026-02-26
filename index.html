@@ -225,13 +225,17 @@
       <div class="flex items-center gap-3">
        <div class="flex items-center gap-3">
        <!-- Avatar -->
-       <div class="relative">
-         <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#00d4aa]/30 to-[#6366f1]/30 blur-md"></div>
+       <div class="relative group">
+         <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#00d4aa]/30 to-[#6366f1]/30 blur-md
+                     transition-all duration-300 ease-out
+                     group-hover:blur-lg group-hover:opacity-90 group-hover:scale-110"></div>
+       
          <img
            src="./img/IMG20251231110705.jpg"
            alt="Wei Chun Wen"
            class="relative w-10 h-10 rounded-full object-cover ring-2 ring-[#00d4aa]/30 shadow-lg
-                  transition-transform duration-300 hover:scale-105"
+                  transition-transform duration-300 ease-out
+                  group-hover:scale-110"
            loading="lazy"
            onerror="this.style.display='none'"
          />
