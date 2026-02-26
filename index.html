@@ -498,41 +498,41 @@
     <div class="max-w-6xl mx-auto">
      <h2 class="text-3xl font-bold mb-12 flex items-center gap-3"><span class="gradient-text">精選專案</span> <span class="text-[#e8edf5]/30">Featured Projects</span></h2>
      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Project 1 -->
-      <div class="card-glow rounded-2xl overflow-hidden section-enter">
-      <div class="h-40 relative overflow-hidden">
-       <div class="relative w-full overflow-hidden rounded-t-2xl" style="aspect-ratio: 16 / 9;">
-  <!-- 背景：用同一張 GIF 做模糊滿版，專門用來補空白 -->
-  <img
-    src="/gif/E_DROP.gif"
-    alt=""
-    class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-35"
-    aria-hidden="true"
-  />
+       <div class="card-glow rounded-2xl overflow-hidden section-enter">
+  <!-- 圖片區：固定比例 + 不裁切主畫面（contain），背景模糊補滿 -->
+  <div class="relative w-full overflow-hidden" style="aspect-ratio: 16 / 9;">
+    <img
+      src="./gif/E_DROP.gif"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-35"
+      aria-hidden="true"
+    />
+    <img
+      src="./gif/E_DROP.gif"
+      alt="E-Drop"
+      class="absolute inset-0 w-full h-full object-contain"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-br from-[#00d4aa]/15 to-[#6366f1]/15 pointer-events-none"></div>
+  </div>
 
-  <!-- 前景：完整顯示，不裁切 -->
-  <img
-    src="/gif/E_DROP.gif"
-    alt="E-Drop"
-    class="absolute inset-0 w-full h-full object-contain"
-    loading="lazy"
-  />
-       
-         <!-- 可選：加一層漸層濾鏡，讓整體更「科技風」也不會太花 -->
-         <div class="absolute inset-0 bg-gradient-to-br from-[#00d4aa]/15 to-[#6366f1]/15"></div>
-       </div>
-       <div class="p-6">
-        <div class="flex items-center gap-2 mb-3"><span class="px-2 py-1 rounded text-xs bg-[#00d4aa]/10 text-[#00d4aa]">BLE</span> <span class="px-2 py-1 rounded text-xs bg-[#6366f1]/10 text-[#6366f1]">DFU</span> <span class="px-2 py-1 rounded text-xs bg-[#f59e0b]/10 text-[#f59e0b]">Motor</span>
-        </div>
-        <h3 class="text-lg font-bold mb-2">EDP 系列</h3>
-        <p class="text-sm text-[#e8edf5]/60 mb-4">BLE + DFU/Bootloader + 馬達控制板整合</p>
-        <ul class="text-xs text-[#e8edf5]/50 space-y-1">
-         <li>• BLE 連線/綁定與穩定性處理</li>
-         <li>• DFU/Bootloader 封包與燒錄流程</li>
-         <li>• UART/CAN 命令整合、狀態機、錯誤處理</li>
-         <li>• 產線測項流程與 log/追溯設計</li>
-        </ul>
-       </div>
-      </div><!-- Project 2 -->
+  <!-- 文字區 -->
+  <div class="p-6">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="px-2 py-1 rounded text-xs bg-[#00d4aa]/10 text-[#00d4aa]">BLE</span>
+      <span class="px-2 py-1 rounded text-xs bg-[#6366f1]/10 text-[#6366f1]">DFU</span>
+      <span class="px-2 py-1 rounded text-xs bg-[#f59e0b]/10 text-[#f59e0b]">Motor</span>
+    </div>
+    <h3 class="text-lg font-bold mb-2">E-Drop</h3>
+    <p class="text-sm text-[#e8edf5]/60 mb-4">BLE + DFU/Bootloader + 馬達控制板整合</p>
+    <ul class="text-xs text-[#e8edf5]/50 space-y-1">
+      <li>• BLE 連線/綁定與穩定性處理</li>
+      <li>• DFU/Bootloader 封包與燒錄流程</li>
+      <li>• UART/CAN 命令整合、狀態機、錯誤處理</li>
+      <li>• 產線測項流程與 log/追溯設計</li>
+    </ul>
+  </div>
+</div><!-- Project 2 -->
       <div class="card-glow rounded-2xl overflow-hidden section-enter stagger-1">
        <div class="h-40 bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center">
         <svg class="w-16 h-16 text-[#6366f1]/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
