@@ -500,12 +500,22 @@
      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Project 1 -->
       <div class="card-glow rounded-2xl overflow-hidden section-enter">
       <div class="h-40 relative overflow-hidden">
-         <img
-           src="/gif/E_DROP.gif"
-           alt="E-Drop"
-           class="absolute inset-0 w-full h-full object-cover"
-           loading="lazy"
-         />
+       <div class="relative w-full overflow-hidden rounded-t-2xl" style="aspect-ratio: 16 / 9;">
+  <!-- 背景：用同一張 GIF 做模糊滿版，專門用來補空白 -->
+  <img
+    src="./gif/E_DROP.gif"
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-35"
+    aria-hidden="true"
+  />
+
+  <!-- 前景：完整顯示，不裁切 -->
+  <img
+    src="./gif/E_DROP.gif"
+    alt="E-Drop"
+    class="absolute inset-0 w-full h-full object-contain"
+    loading="lazy"
+  />/>
        
          <!-- 可選：加一層漸層濾鏡，讓整體更「科技風」也不會太花 -->
          <div class="absolute inset-0 bg-gradient-to-br from-[#00d4aa]/15 to-[#6366f1]/15"></div>
