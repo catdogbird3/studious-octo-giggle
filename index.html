@@ -514,7 +514,8 @@
          <li>• 2025 Best AI Awards 智慧創新大賞｜入選</li>
         </ul>
        </div>
-      </div><!-- Project 3 -->
+      </div>
+      <!-- Project 3 -->
       <div class="card-glow rounded-2xl overflow-hidden section-enter stagger-2">
     <!-- 圖片區：固定比例 + 不裁切主畫面（contain），背景模糊補滿 -->
         <div class="relative w-full overflow-hidden" style="aspect-ratio: 16 / 9;">
@@ -544,6 +545,44 @@
         </ul>
        </div>
       </div>
+      <!-- Project X：手機 APP → nRF52 DFU + UART → M0A23 APROM 更新 -->
+     <div class="card-glow rounded-2xl overflow-hidden section-enter stagger-2">
+       <!-- 圖片區：固定比例 + 不裁切主畫面（contain），背景模糊補滿 -->
+       <div class="relative w-full overflow-hidden" style="aspect-ratio: 16 / 9;">
+         <img
+           src="gif/DFU_APP.gif"
+           alt=""
+           class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-35"
+           aria-hidden="true"
+         />
+         <img
+           src="gif/DFU_APP.gif"
+           alt="Mobile DFU + UART Bridge"
+           class="absolute inset-0 w-full h-full object-contain"
+           decoding="async"
+         />
+         <div class="absolute inset-0 bg-gradient-to-br from-[#00d4aa]/15 to-[#6366f1]/15 pointer-events-none"></div>
+       </div>
+     
+       <!-- 文字區 -->
+       <div class="p-6">
+         <div class="flex items-center gap-2 mb-3">
+           <span class="px-2 py-1 rounded text-xs bg-[#00d4aa]/10 text-[#00d4aa]">BLE</span>
+           <span class="px-2 py-1 rounded text-xs bg-[#6366f1]/10 text-[#6366f1]">DFU</span>
+           <span class="px-2 py-1 rounded text-xs bg-[#f59e0b]/10 text-[#f59e0b]">UART</span>
+         </div>
+     
+         <h3 class="text-lg font-bold mb-2">手機 APP 韌體更新整合</h3>
+         <p class="text-sm text-[#e8edf5]/60 mb-4">APP 對 nRF52 DFU，並透過 UART Bridge 更新 M0A23EC1AC APROM</p>
+     
+         <ul class="text-xs text-[#e8edf5]/50 space-y-1">
+           <li>• 手機 APP（iOS/Android）BLE 連線與 DFU 流程整合（狀態/進度/錯誤回報）</li>
+           <li>• nRF52 Secure DFU：封包管理、版本控管、更新完成驗證</li>
+           <li>• UART Bridge：nRF52 作為中繼，轉發更新資料給 M0A23EC1AC</li>
+           <li>• M0A23 APROM 更新：進入 ISP/IAP、分段寫入、CRC/校驗、失敗復原策略</li>
+         </ul>
+       </div>
+     </div>
      </div>
     </div>
    </section><!-- Education Section -->
@@ -574,6 +613,7 @@
        <div class="mt-4 p-3 bg-[#141c2e] rounded-lg border border-[#00d4aa]/10">
         <p class="text-xs text-[#e8edf5]/60"><span class="text-[#00d4aa]">論文：</span>《結合 ESRGAN 與 CycleGAN 之牙齒重建模擬與 GUI 視覺化系統設計》</p>
         <p class="text-xs text-[#f59e0b] mt-1">論文成績 93 分</p>
+        <p class="text-xs text->[#e8edf5]/60">AI 應用論文競賽｜碩士組 佳作論文獎</p>
        </div>
       </div><!-- FCU -->
       <div class="card-glow rounded-2xl p-6 section-enter stagger-1">
