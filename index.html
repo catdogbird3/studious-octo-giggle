@@ -442,13 +442,15 @@
       </div>
      </div>
     </div>
-   </section><!-- Projects Section -->
+   </section>
+   <!-- Projects Section -->
    <section id="projects" class="py-16 px-6">
     <div class="max-w-6xl mx-auto">
      <h2 class="text-3xl font-bold mb-12 flex items-center gap-3"><span class="gradient-text">精選專案</span> <span class="text-[#e8edf5]/30">Featured Projects</span></h2>
-     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Project 1 -->
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+     <!-- Project 1 -->
        <div class="card-glow rounded-2xl overflow-hidden section-enter">
-  <!-- 圖片區：固定比例 + 不裁切主畫面（contain），背景模糊補滿 -->
+    <!-- 圖片區：固定比例 + 不裁切主畫面（contain），背景模糊補滿 -->
     <div class="relative w-full overflow-hidden" style="aspect-ratio: 16 / 9;">
       <img
         src="gif/E_DROP.gif"
@@ -483,10 +485,22 @@
   </div>
 </div><!-- Project 2 -->
       <div class="card-glow rounded-2xl overflow-hidden section-enter stagger-1">
-       <div class="h-40 bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center">
-        <svg class="w-16 h-16 text-[#6366f1]/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-       </div>
+    <!-- 圖片區：固定比例 + 不裁切主畫面（contain），背景模糊補滿 -->
+        <div class="relative w-full overflow-hidden" style="aspect-ratio: 16 / 9;">
+          <img
+            src="gif/yolov8.gif"
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-35"
+            aria-hidden="true"
+          />
+          <img
+            src="gif/yolov8.gif"
+            alt="E-Drop"
+            class="absolute inset-0 w-full h-full object-contain"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-gradient-to-br from-[#00d4aa]/15 to-[#6366f1]/15 pointer-events-none"></div>
+        </div>
        <div class="p-6">
         <div class="flex items-center gap-2 mb-3"><span class="px-2 py-1 rounded text-xs bg-[#6366f1]/10 text-[#6366f1]">Raspberry Pi</span> <span class="px-2 py-1 rounded text-xs bg-[#a855f7]/10 text-[#a855f7]">AI</span>
         </div>
