@@ -192,6 +192,65 @@
       background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
     }
 
+    /* ===== Lightbox (Poster click -> fullscreen) ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;            /* 預設不顯示 */
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(10, 15, 26, 0.82);
+      backdrop-filter: blur(10px);
+    }
+    
+    .lightbox.show { display: flex; }
+    
+    .lightbox-panel {
+      position: relative;
+      width: min(1100px, 92vw);
+      max-height: 88vh;
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(20, 28, 46, 0.92);
+      border: 1px solid rgba(0, 212, 170, 0.18);
+      box-shadow: 0 28px 70px -28px rgba(0, 212, 170, 0.35);
+    }
+    
+    .lightbox-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 88vh;
+      object-fit: contain;
+      background: #0a0f1a;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 212, 170, 0.25);
+      background: rgba(10, 15, 26, 0.6);
+      color: rgba(232, 237, 245, 0.9);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+    }
+    
+    .lightbox-close:hover {
+      transform: scale(1.06);
+      background: rgba(0, 212, 170, 0.08);
+      border-color: rgba(0, 212, 170, 0.45);
+    }
+    
+    .poster-clickable { cursor: zoom-in; }
+    
     /* ===== Awards Tech Reveal (HUD style + scan beam) ===== */
     .reveal-card { position: relative; }
 
@@ -979,7 +1038,7 @@
 
     <div class="tech-reveal">
       <!-- Poster DEMO -->
-      <div class="holo-frame">
+      <div class="holo-frame poster-clickable" data-lightbox-src="img/AI_POSTER.jpg" data-lightbox-alt="POSTER DEMO - Full Image">
         <div class="holo-media">
           <span class="scan-beam"></span>
 
@@ -1065,7 +1124,53 @@
       accent_primary: '#00d4aa',
       accent_secondary: '#6366f1'
     };
-
+      // ===== Lightbox logic =====
+      (function () {
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbClose = document.getElementById('lightbox-close');
+    
+        if (!lb || !lbImg || !lbClose) return;
+    
+        function openLightbox(src, alt) {
+          lbImg.src = src;
+          lbImg.alt = alt || 'Preview';
+          lb.classList.add('show');
+          lb.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+    
+        function closeLightbox() {
+          lb.classList.remove('show');
+          lb.setAttribute('aria-hidden', 'true');
+          lbImg.src = '';
+          lbImg.alt = '';
+          document.body.style.overflow = '';
+        }
+    
+        // 點 Poster / 可點圖卡
+        document.addEventListener('click', (e) => {
+          const target = e.target.closest('[data-lightbox-src]');
+          if (!target) return;
+    
+          const src = target.getAttribute('data-lightbox-src');
+          const alt = target.getAttribute('data-lightbox-alt') || '';
+          if (src) openLightbox(src, alt);
+        });
+    
+        // 點背景關閉（點 panel 不關）
+        lb.addEventListener('click', (e) => {
+          if (e.target === lb) closeLightbox();
+        });
+    
+        // X 按鈕關閉
+        lbClose.addEventListener('click', closeLightbox);
+    
+        // ESC 關閉
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && lb.classList.contains('show')) closeLightbox();
+        });
+      })();
     // Initialize Element SDK
     if (window.elementSdk) {
       window.elementSdk.init({
@@ -1160,6 +1265,14 @@
     }, { threshold: 0.18 });
 
     document.querySelectorAll('.card-glow').forEach(card => observer.observe(card));
+        <div id="lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+        <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Close">
+          ✕
+        </button>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+      </div>
+    </div>
   </script>
 </body>
 </html> 
