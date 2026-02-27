@@ -501,6 +501,7 @@
           />
           <div class="absolute inset-0 bg-gradient-to-br from-[#00d4aa]/15 to-[#6366f1]/15 pointer-events-none"></div>
         </div>
+         <!-- 文字區 -->
        <div class="p-6">
         <div class="flex items-center gap-2 mb-3"><span class="px-2 py-1 rounded text-xs bg-[#6366f1]/10 text-[#6366f1]">Raspberry Pi</span> <span class="px-2 py-1 rounded text-xs bg-[#a855f7]/10 text-[#a855f7]">AI</span>
         </div>
@@ -515,10 +516,23 @@
        </div>
       </div><!-- Project 3 -->
       <div class="card-glow rounded-2xl overflow-hidden section-enter stagger-2">
-       <div class="h-40 bg-gradient-to-br from-[#f59e0b]/20 to-[#00d4aa]/20 flex items-center justify-center">
-        <svg class="w-16 h-16 text-[#f59e0b]/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-       </div>
+    <!-- 圖片區：固定比例 + 不裁切主畫面（contain），背景模糊補滿 -->
+        <div class="relative w-full overflow-hidden" style="aspect-ratio: 16 / 9;">
+          <img
+            src="gif/STM32_CAR.gif"
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-35"
+            aria-hidden="true"
+          />
+          <img
+            src="gif/STM32_CAR.gif"
+            alt="E-Drop"
+            class="absolute inset-0 w-full h-full object-contain"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-gradient-to-br from-[#00d4aa]/15 to-[#6366f1]/15 pointer-events-none"></div>
+        </div>
+  <!-- 文字區 -->
        <div class="p-6">
         <div class="flex items-center gap-2 mb-3"><span class="px-2 py-1 rounded text-xs bg-[#f59e0b]/10 text-[#f59e0b]">Motor</span> <span class="px-2 py-1 rounded text-xs bg-[#00d4aa]/10 text-[#00d4aa]">IMU</span>
         </div>
